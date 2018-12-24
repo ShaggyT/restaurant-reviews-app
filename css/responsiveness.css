@@ -1,0 +1,81 @@
+/* ====================== Media Queries ====================== */
+
+@media screen and (min-width: 320px) and (max-width: 670px) {
+  #footer a {
+    display: block;
+  }
+
+  #reviews-list li {
+    position: relative;
+    width: 100%;
+    border: 1px solid #7F6200;
+    background-color: #252831;
+    color: white;
+   }
+
+  #reviews-list li .reviews-header p {
+    padding: 0 5px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 490px) {
+  .reviews-name {
+    font-size: 1em;
+  }
+  .reviews-date {
+    font-size: 0.85em;
+  }
+  .reviews-rating {
+    font-size: 1em;
+  }
+}
+
+
+@media screen and (min-width: 500px) and (max-width: 650px) {
+  #restaurant-img {
+    width: 80%;
+  }
+  #restaurant-cuisine {
+    width: 80%;
+  }
+  #restaurant-hours {
+    width: 80%;
+  }
+
+}
+
+@media screen and (min-width: 651px) and (max-width: 800px)  {
+  #restaurant-img {
+    width: 70%;
+  }
+  #restaurant-cuisine {
+    width: 70%;
+  }
+  #restaurant-hours {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px){
+  #restaurant-img {
+    width: 60%;
+  }
+  #restaurant-cuisine {
+    width: 60%;
+  }
+  #restaurant-hours {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  #restaurant-img {
+    width: 50%;
+  }
+  #restaurant-cuisine {
+    width: 50%;
+  }
+  #restaurant-hours {
+    width: 50%;
+  }
+}

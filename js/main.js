@@ -163,25 +163,47 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
+  const moreDetails = document.createElement('a');
+  // more.innerHTML = 'View Details';
+  moreDetails.href = DBHelper.urlForRestaurant(restaurant);
+  li.append(moreDetails)
+
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
-  li.append(name);
+  moreDetails.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  li.append(neighborhood);
+  moreDetails.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
-  li.append(address);
+  moreDetails.append(address);
 
-  const more = document.createElement('a');
-  more.innerHTML = 'View Details';
-  more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  const divider = document.createElement('hr');
+  divider.className = 'divider';
+  moreDetails.append(divider);
+
+  const rating = document.createElement('span');
+  rating.className = 'rating';
+  rating.innerHTML = 'Rating: ' + restaurantRating(restaurant);
+  moreDetails.append(rating);
+
+  const cuisineType = document.createElement('span');
+  cuisineType.className = 'cuisine-type';
+  cuisineType.innerHTML = restaurant.cuisine_type;
+  moreDetails.append(cuisineType);
 
   return li
 }
+
+restaurantRating = (restaurant) => {
+  let reviews = restaurant.reviews.map( r => r.rating);
+  let rating = reviews.reduce((a, b) => a + b, 0) / reviews.length;
+  rating = rating.toFixed(1);
+
+  return rating;
+};
 
 /**
  * Add markers for current restaurants to the map.
