@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
@@ -12,28 +12,28 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
-
+  <header role="banner">
+    <nav tabindex="1" role="navigation">
+      <h1 aria-label="restaurant reviews app header"><a href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
-  <main id="maincontent">
-    <section id="map-container">
-      <div id="map"></div>
+  <main id="maincontent" role="main">
+    <section id="map-container" role="application" tabindex="-1">
+      <div id="map" aria-hidden="true" aria-describedby="map-description"></div>
+      <div hidden id="map-description">Map showing restaurant's locations</div>
     </section>
-    <div class="filter-options">
+    <div class="filter-options" tabindex="0" role="group">
       <h2>Filter Results</h2>
-      <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+      <select name="neighborhoods" onchange="updateRestaurants()" aria-label="filter by neighbourhood" id="neighborhoods-select" tabindex="0" role="option">
         <option value="all">All Neighborhoods</option>
       </select>
-      <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+      <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="filter by type of cuisine"  tabindex="0" role="option">
         <option value="all">All Cuisines</option>
       </select>
     </div>
     <section>
-      <ul id="restaurants-list"></ul>
+      <ul id="restaurants-list" aria-label="lists of restaurants" tabindex="0" role="list"></ul>
     </section>
   </main>
 
@@ -41,7 +41,7 @@
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
 
-  <footer id="footer">
+  <footer id="footer" tabindex="3" role="contentinfo">
     Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
 
