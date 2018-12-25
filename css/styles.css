@@ -325,7 +325,11 @@ nav a {
 	border-radius: 0 2em 0 2em;
 }
 
-#reviews-list li p {
+#reviews-list li time {
+	display: block;
+}
+
+#reviews-list li p, #reviews-list li time  {
   margin: 0 0 10px;
 	padding: 0 20px;
 	color: lightgray;
@@ -418,4 +422,8 @@ nav a {
 
 #reviews-list li .reviews-comments{
 	text-align: justify;
+}
+
+.labels {
+	display: none;
 }

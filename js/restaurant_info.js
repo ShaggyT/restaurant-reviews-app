@@ -164,7 +164,7 @@ createReviewHTML = (review) => {
   header.appendChild(name);
 
 
-  const date = document.createElement('p');
+  const date = document.createElement('time');
   date.innerHTML = review.date;
   date.className = 'reviews-date';
   header.appendChild(date);
