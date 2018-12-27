@@ -7,17 +7,17 @@ The [starter code](https://github.com/udacity/mws-restaurant-stage-1) will serve
 
 ## Table of Contents
 
-- [Project Overview](#project overview)
+- [Project Overview](#project_overview)
 - [Dependencies](#dependencies)
-- [Added Features](#added features)
+- [Added Features](#added_features)
 - [Installation](#installation)
-- [Live Preview](#live preview)
+- [Live Preview](#live_preview)
 - [Screenshots](#screenshots)
 
 ## Project Overview
 
 
-In the  **Restaurant Reviews** App, the user can search for restaurants based on neighborhood or cuisine type. The map will be updated based on the filters applied. The user can see the details of each restaurant, by clicking on each card.   
+In the  **Restaurant Reviews** App, the user can search for restaurants based on neighbourhood or cuisine type. The map will be updated based on the filters applied. The user can see the details of each restaurant, by clicking on each card.   
 In this project, a static webpage that lacks accessibility is converted to a a mobile-ready web application that is responsive on different sized displays and accessible for screen reader use.. The static design lacks accessibility. A service worker is added to begin the process of creating a seamless offline experience for your users.
 
 

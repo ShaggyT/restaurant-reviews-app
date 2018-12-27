@@ -16,6 +16,8 @@
   #reviews-list li .reviews-header p, #reviews-list li .reviews-header time {
     padding: 0 5px;
   }
+
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 490px) {
@@ -27,6 +29,10 @@
   }
   .reviews-rating {
     font-size: 1em;
+  }
+
+  #restaurant-hours td {
+    font-size: 11px !important;
   }
 
 }
