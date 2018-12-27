@@ -13,7 +13,7 @@
     color: white;
    }
 
-  #reviews-list li .reviews-header p {
+  #reviews-list li .reviews-header p, #reviews-list li .reviews-header time {
     padding: 0 5px;
   }
 }
@@ -23,11 +23,12 @@
     font-size: 1em;
   }
   .reviews-date {
-    font-size: 0.85em;
+    font-size: 0.7em;
   }
   .reviews-rating {
     font-size: 1em;
   }
+
 }
 
 

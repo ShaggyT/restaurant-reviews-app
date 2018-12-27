@@ -4,6 +4,17 @@ var newMap;
  * Initialize map as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+
+  if ('serviceWorker' in navigator) {
+    console.log("Service worker supported");
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('./sw.js', { scope: '' })
+        .then(reg => console.log('Service worker registered'))
+        .catch(err => console.log(`Service Worker: Error: ${err}`))
+    })
+  }
+
   initMap();
 });
 
