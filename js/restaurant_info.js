@@ -1,5 +1,6 @@
 let restaurant;
 var newMap;
+
 /**
  * Initialize map as soon as the page is loaded.
  */
@@ -107,6 +108,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
   cuisine.setAttribute('aria-label', `Cuisine type:  ${restaurant.cuisine_type}`);
+  image.className = 'restaurant-img';
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -175,10 +177,7 @@ createReviewHTML = (review) => {
   header.appendChild(name);
 
 
-  const date = document.createElement('time');
-  date.innerHTML = review.date;
-  date.className = 'reviews-date';
-  header.appendChild(date);
+
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
@@ -190,6 +189,11 @@ createReviewHTML = (review) => {
   comments.innerHTML = review.comments;
   comments.className = 'reviews-comments';
   li.appendChild(comments);
+
+  const date = document.createElement('time');
+  date.innerHTML = `Posted At: ${review.date}`;
+  date.className = 'reviews-date';
+  li.appendChild(date);
 
   return li;
 }
@@ -204,6 +208,7 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   li.setAttribute('aria-current', 'page');
   breadcrumb.appendChild(li);
 }
+
 
 /**
  * Get a parameter by name from page URL.

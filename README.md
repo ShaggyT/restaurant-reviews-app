@@ -55,7 +55,7 @@ In this project, a static webpage that lacks accessibility is converted to a a m
 
 
 ###  Live Preview
-To play the game, [Click Here!](https://udacityrestaurantreviewsapp.netlify.com)
+To play the game, [Click Here!](https://udacity-restaurant-reviews-app.netlify.com)
 
 ###  Screenshots
 

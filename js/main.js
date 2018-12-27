@@ -4,6 +4,11 @@ let restaurants,
 var newMap
 var markers = []
 
+
+const cuisineType = {
+  "Asian": 'purple',
+
+}
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -13,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log("Service worker supported");
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register("/sw.js", { scope: "" })
+        .register('/sw.js', { scope: ''})
         .then(reg => console.log('Service worker registered'))
         .catch(err => console.log(`Service Worker: Error: ${err}`))
     })
@@ -178,12 +183,22 @@ createRestaurantHTML = (restaurant) => {
   li.append(image);
 
   const moreDetails = document.createElement('a');
-  // more.innerHTML = 'View Details';
   moreDetails.href = DBHelper.urlForRestaurant(restaurant);
   li.append(moreDetails)
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  // add animation when hovering on restaurant name
+  name.addEventListener('mouseover', function(e) {
+    name.classList.add('pulse');
+    name.classList.remove('active')
+  });
+
+  // remove aniamtion when leaving restaurant name
+  name.addEventListener('mouseout', function(e) {
+    name.classList.remove('pulse');
+    name.classList.remove('active')
+  });
   moreDetails.append(name);
 
   const neighborhood = document.createElement('p');
@@ -200,23 +215,25 @@ createRestaurantHTML = (restaurant) => {
 
   const rating = document.createElement('span');
   rating.className = 'rating';
-  rating.innerHTML = 'Rating: ' + restaurantRating(restaurant);
+  rating.innerHTML = `Rating:  ${overallRatingFloat(restaurant)}`;
   moreDetails.append(rating);
 
   const cuisineType = document.createElement('span');
-  cuisineType.className = 'cuisine-type';
+  cuisineType.className = `cuisine-type ${restaurant.cuisine_type}`;
   cuisineType.innerHTML = restaurant.cuisine_type;
   moreDetails.append(cuisineType);
 
   return li
 }
 
-restaurantRating = (restaurant) => {
-  let reviews = restaurant.reviews.map( r => r.rating);
-  let rating = reviews.reduce((a, b) => a + b, 0) / reviews.length;
-  rating = rating.toFixed(1);
-
-  return rating;
+overallRatingFloat = restaurant => {
+  // list of each restaurant reviews
+  let reviews = restaurant.reviews.map( review => review.rating);
+  reviewsLength = reviews.length;
+  // average of each restaurant reviews
+  let rating = (reviews.reduce((a, b) => (a + b), 0)) / reviewsLength;
+  // return rating - 2 decimals
+  return rating.toFixed(2);
 };
 
 /**

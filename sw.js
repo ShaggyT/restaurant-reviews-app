@@ -19,7 +19,8 @@ const cacheAssets = [
 '/data/restaurants.json',
 '/js/dbhelper.js',
 'index.html',
-'restaurant.html'
+'restaurant.html',
+'favicon.ico'
 ]
 
 // Call Install Event

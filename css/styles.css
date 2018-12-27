@@ -19,7 +19,7 @@ body {
 }
 
 ul, li {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "Roboto", sans-serif, Arial, Helvetica;
 	font-size: 10pt;
 	color: #333;
 }
@@ -30,7 +30,7 @@ a {
 }
 
 a:hover, a:focus {
-	color: #3397db;
+	color: white;
 	text-decoration: none;
 }
 
@@ -39,7 +39,7 @@ a img{
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
   margin: 0 0 20px;
 }
 
@@ -90,7 +90,7 @@ nav {
 
 
 nav h1 {
-	font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif, Arial, Helvetica;
 	font-weight: 600;
 	font-size: 1.5em;
 	margin: auto;
@@ -103,6 +103,13 @@ nav a {
 	align-items: center;
 	padding: 0 1em;
 	height: 100%;
+	letter-spacing: 2px;
+}
+
+
+nav a: hover {
+  color: white !important;
+
 }
 
 #breadcrumb {
@@ -135,8 +142,7 @@ nav a {
 
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
-  color: #01447e;
-  text-decoration: underline;
+  color: gray;
 }
 
 /* ====================== Map ====================== */
@@ -169,7 +175,7 @@ nav a {
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
-  font-family: Arial,sans-serif;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
   font-size: 11pt;
   height: 35px;
   letter-spacing: 0;
@@ -195,7 +201,7 @@ nav a {
 #restaurants-list li {
   background-color: #fff;
 	background-color: #252831;
-  font-family: Arial,sans-serif;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
   margin: 15px;
   min-height: 380px;
 	padding: 0;
@@ -217,7 +223,7 @@ nav a {
 
 #restaurants-list li h1 {
   color: #7F6200;
-  font-family: "Roboto",Arial,sans-serif;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
 	font-size: 1.2em;
   font-weight: 600;
   letter-spacing: 0;
@@ -258,6 +264,7 @@ nav a {
   height: 100%;
   width: 100%;
 }
+
 .inside #footer {
   bottom: 0;
   position: absolute;
@@ -266,7 +273,7 @@ nav a {
 
 #restaurant-name {
   color: #7F6200;
-  font-family: "Roboto", Arial,sans-serif;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
   font-size: 20pt;
   font-weight: 200;
   letter-spacing: 0;
@@ -281,12 +288,12 @@ nav a {
 }
 
 #restaurant-address {
-	font-size: 1.4em;
-	margin: 10px 0px;
+	font-size: 1.3em;
 	color: #7F6200;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: 1.5em;
+	margin-top: 1em;
 }
 
 #restaurant-cuisine {
@@ -375,6 +382,27 @@ nav a {
 	color:#7F6200;
 }
 
+/* Cuisine Type Colros */
+.Pizza {
+	color: #F03BA2;
+	letter-spacing: 2px;
+}
+
+.Asian {
+	color: #BC9EB3;
+	letter-spacing: 2px;
+}
+
+.Mexican {
+	color: #96C8C7;
+	letter-spacing: 2px;
+}
+
+.American {
+	color: #A3AA49;
+	letter-spacing: 2px;
+}
+
 .divider {
  display: block;
  height: 1px;
@@ -387,25 +415,33 @@ nav a {
 .reviews-name {
   font-size: 1.2em;
   font-weight: bold;
-  width: 33%;
-  display: inline-block;
-}
-
-.reviews-date {
-  width: 33%;
+  width: 50%;
   display: inline-block;
 }
 
 .reviews-rating {
   font-weight: bold;
-  width: 33%;
+  width: 50%;
   display: inline-block;
   text-align: right;
 }
 
+.reviews-date {
+	text-align: right;
+	width: 100%;
+
+}
+
+#reviews-list li time {
+    padding: 0 20px;
+    color: #7F6200;
+		margin-left: auto;
+		margin-right: auto;
+}
+
 #restaurant-hours {
   margin-bottom: 15px;
-  width: 85%;
+  width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -413,7 +449,7 @@ nav a {
 #restaurant-inner-container {
   display: flex;
   flex-direction: row;
-  width: 90%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -445,4 +481,47 @@ nav a {
 
 .labels {
 	display: none;
+}
+
+
+
+/* Animation */
+
+/* Flipping Card (flipInY): http://www.theappguruz.com/tag-tools/web/CSSAnimations/  */
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+  @keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
 }
